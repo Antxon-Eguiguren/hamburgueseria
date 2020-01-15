@@ -1,0 +1,438 @@
+/* Import del reset de Eric Meyer */
+@import url(reset.css);
+
+/* Import de las fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Handlee|Montserrat:400,700&display=swap&subset=latin-ext');
+
+/*
+    TIPOGRAFÍAS:
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Handlee', cursive;
+
+    COLORES:
+    Rojo: #FA573A;
+    Azul: #21242E;
+*/
+
+/* :root es para crear variables en CSS */
+
+/* Los containers */
+.container {
+    max-width: 1100px;
+    /* Otra opción es width: 80% */
+    margin: 0 auto;
+    padding: 0 3%;
+}
+
+.container-fluid {
+    width: 100%;
+}
+
+/* El border box (no viene en el reset de Eric Meyer) */
+* {
+    /* Chrome */
+    box-sizing: border-box;
+    /* Safari */
+    -webkit-box-sizing: border-box;
+    /* Firefox */
+    -moz-box-sizing: border-box;
+    /* Opera */
+    -o-box-sizing: border-box;
+    /* Internet Explorer */
+    -ms-box-sizing: border-box;
+}
+
+/* La fuente para el body */
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+}
+
+/* Para resetear las flotaciones */
+.row:after {
+    clear: both;
+    content: "";
+    height: 0;
+    display: block;
+}
+
+/* Imagenes responsive */
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Header superior */
+header .nav-top {
+    background-color: #21242E;
+    padding: 20px 0;
+}
+
+header .nav-top .container div {
+    float: left;
+    width: 25%;
+}
+
+header .nav-top a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+header .nav-top a span {
+    display: none;
+}
+
+header .nav-top a i {
+    color: #FA573A;
+}
+header .nav-top a:hover i {
+    color: white;
+}
+
+header .nav-top .container div:nth-child(3), header .nav-top .container div:last-child {
+    text-align: right;
+}
+
+/* Menú de navegación */
+
+header nav {
+    padding: 20px 3%;
+}
+
+header .hamburguesa {
+    cursor: pointer;
+    float: right;
+}
+
+header .hamburguesa div {
+    border-top: 2px solid #aaa;
+    width: 1.875em;
+    margin-bottom: 0.625em;
+}
+
+header nav .logo {
+    float: left;
+    width: 100px;
+}
+
+header nav .menu {
+    padding-top: 60px;
+}
+
+header nav .menu li {
+    padding: 1em;
+    text-align: center;
+    border-bottom: 1px solid #aaa;
+}
+
+header nav .menu li:last-child {
+    border-bottom: none;
+}
+
+header nav .menu li a {
+    text-decoration: none;
+    color: #aaa;
+    /* Para que todo el botón sea clickable, no solamente el Item */
+    display: block;
+}
+
+/* Como en los móviles no existe el hover, usamos la clase activa para que se vea en los móviles en qué categoría estás. */
+header nav .menu li a.activo,
+header nav .menu li a:hover {
+    color: #FA573A;
+}
+
+/* Inicio del Hero */
+
+.hero {
+    background-image: url(../images/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 37em;
+    /* Para hacer una capa de fondo */
+    background-color: #555;
+    background-blend-mode: multiply; 
+}
+
+.hero div {
+    color: white;
+    padding: 15% 3%;
+}
+
+.hero h1 {
+    font-family: 'Handlee', cursive;
+    font-size: 2.5em;
+}
+
+.hero h2 {
+    color: #FA573A;
+    font-size: 1.25em;
+    margin: 1em 0;
+}
+
+.hero p {
+    font-size: 1.15em;
+    color:white;
+}
+
+.boton {
+    display: inline-block;
+    background-color: #FA573A;
+    padding: 1.15em;
+    color: white;
+    text-decoration: none;
+    margin: 1em 0;
+    border: 1px solid #FA573A;
+}
+
+.boton i {
+    margin-left: 5px;
+}
+
+.boton:hover {
+    background-color: transparent;
+    color: #FA573A;
+}
+
+.boton:hover i {
+    transform: translateX(5px);
+    /* Aplicamos la regla transition solamente al transform, para que la flecha cambie de color inmediatamente pero la transición la haga de 1s */
+    transition: transform 1s;
+}
+
+.hero ul li {
+    display: inline-block;
+    font-size: 1.5em;
+    padding: 10px 17px;
+}
+
+.hero ul li a {
+    color: white;
+}
+
+.hero ul li a:hover {
+    color: #FA573A;
+}
+
+/* Inicio del MAIN */
+
+main section.container {
+    padding-top: 3.125em;
+}
+
+main section h2  {
+    font-family: 'Handlee', cursive;
+    font-size: 2em;
+    text-align: center;
+}
+
+main section h2 span {
+    color: #FA573A;
+}
+
+.underline {
+    position: relative;
+    width: 120px;
+    margin: 0 auto;
+}
+
+.underline hr {
+    position: absolute;
+    width: 100%;
+    border-color: #FA573A;
+    top: -1.5px;
+}
+
+.underline span {
+    color: #FA573A;
+    display: block;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* Inicio Our Services */
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex article {
+    width: 100%;
+    padding: 1.825em 3%;
+    border-bottom: 1px solid #aaa;
+}
+
+.flex article:last-child {
+    border-bottom: none;
+}
+
+.flex article div i {
+    color: #FA573A;
+    font-size: 2em;
+    border: 2px solid #FA573A;
+    /* Lo ponemos en rem para que no aumente con los 2em que le hemos puesto al icono */
+    padding: .6rem;
+}
+
+/* Rotar el camión de lado */
+.fa-truck {
+    transform: rotateY(180deg);
+}
+
+.flex article h3 {
+    font-weight: 700;
+    margin: 1em 0;
+}
+
+.flex article .enlace {
+    display: inline-block; 
+    color: #FA573A;
+    margin: 1em 0;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.flex article i {
+    margin-left: 3px;
+}
+
+.flex article .enlace:hover i {
+    transform: translateX(5px);
+    transition: 1s;
+}
+
+/* Inicio About Us */
+.flex .columna {
+    width: 100%;
+    padding-top: 6em;
+}
+
+.flex .imagen {
+    width: 85%;
+    margin: 0 auto;
+}
+
+/* Roto el marco */
+.flex .marco {
+    border: 3px solid #FA573A;
+    background-color: transparent;
+    transform: rotateZ(10deg);
+    transition: 1s;
+}
+
+/* Dejo la imagen en la posición original, ya que si roto el marco en la sentencia de antes, también roto la imagen con él */
+.flex .marco img {
+    transform: rotateZ(-10deg);
+    transition: 1s;
+}
+
+.flex .imagen:hover .marco,
+.flex .imagen:hover .marco img {
+    transform: rotateZ(0deg);
+}
+
+.flex .columna h3 {
+    font-weight: 700;
+}
+
+.flex .columna h4 {
+    color: #FA573A;
+    margin: 0.5em 0;
+}
+
+p {
+    color: #555;
+}
+
+footer {
+    background-color: #21242E;
+    padding: 1.825em 0;
+}
+
+footer p {
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+/* MEDIA QUERIES */
+
+/* Hemos empezado en mobile first, por tanto la versión móvil ya está hecha. Ahora tenemos que establecer los breakpoints para tablet y desktop.
+Normalmente es hacer saltos no más de 300px.
+*/
+
+/* 769px = 48.063em --> TABLET PEQUEÑA */
+@media (min-width: 48.063em) {
+    header .nav-top a span {
+        display: inline;
+        font-size: .6em;
+    }
+
+    .flex article {
+        width: 50%;
+        padding: 1.825em 3%;
+        border-bottom: none;
+        border-left: 1px solid #aaa;
+        margin-bottom: 2em;
+    }
+
+    .flex article:last-child {
+        width: 100%;
+        text-align: center;
+    }
+
+    .underline {
+        margin-bottom: 2em;
+    }
+}
+
+/* 1004px = 62.750em --> TABLET MEDIANA */
+@media (min-width: 62.750em) {
+    header .hamburguesa {
+        display: none;
+    }
+
+    header nav .menu {
+        padding-top: 0px;
+        float: right;
+    }
+
+    header nav .menu li {
+        display: inline-block;
+        border-bottom: none;
+        text-align: left;
+        padding: .5em 1em;
+    }
+
+    header nav .menu li:last-child {
+        padding-right: 0em;
+    }
+
+    .flex .columna {
+        width: 50%;
+        padding: 3em 2em;
+    }
+}
+
+/* 1201px = 75.0625em --> DESKTOP */
+@media (min-width: 75.0625em) {
+    .flex article {
+        width: 33.33333333%;
+    }
+
+    .flex article:last-child {
+        width: 33.33333333%;
+        text-align: initial;
+    }
+
+    .hero div {
+        padding: 7% 3%;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+}
