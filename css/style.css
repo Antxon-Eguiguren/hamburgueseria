@@ -294,12 +294,13 @@ main section h2 span {
     border: 2px solid #FA573A;
     /* Lo ponemos en rem para que no aumente con los 2em que le hemos puesto al icono */
     padding: .6rem;
+    box-shadow: 5px 5px 8px #aaa;
 }
 
-/* Rotar el camión de lado */
-.fa-truck {
+/* Rotar el camión de lado (lo tengo comentado porque sino la sombra también me rota y queda mal) */
+/* .fa-truck {
     transform: rotateY(180deg);
-}
+} */
 
 .flex article h3 {
     font-weight: 700;
@@ -365,6 +366,7 @@ main section h2 span {
 
 p {
     color: #555;
+    line-height: 1.5em;
 }
 
 /* Inicio de Footer */
@@ -387,7 +389,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* MEDIA QUERIES */
+/* MEDIA QUERIES HOME */
 
 /* Hemos empezado en mobile first, por tanto la versión móvil ya está hecha. Ahora tenemos que establecer los breakpoints para tablet y desktop.
 Normalmente es hacer saltos no más de 300px.
@@ -395,11 +397,13 @@ Normalmente es hacer saltos no más de 300px.
 
 /* 769px = 48.063em --> TABLET PEQUEÑA */
 @media (min-width: 48.063em) {
+    /* Pasamos de display: none a display: inline */
     header .nav-top a span {
         display: inline;
         font-size: .6em;
     }
 
+    /* Ponemos dos artículos en una fila y el tercero a ancho completo en la siguiente fila */
     .flex article {
         width: 50%;
         padding: 1.825em 3%;
@@ -420,10 +424,12 @@ Normalmente es hacer saltos no más de 300px.
 
 /* 1004px = 62.750em --> TABLET MEDIANA */
 @media (min-width: 62.750em) {
+    /* Quitamos el menú de hamburguesa */
     header .hamburguesa {
         display: none;
     }
 
+    /* Ponemos el menú de navegación en la misma fila que el logo */
     header nav .menu {
         padding-top: 0px;
         float: right;
@@ -440,6 +446,7 @@ Normalmente es hacer saltos no más de 300px.
         padding-right: 0em;
     }
 
+    /* La sección de About Us la ponemos en dos columnas */
     .flex .columna {
         width: 50%;
         padding: 3em 2em;
@@ -448,6 +455,7 @@ Normalmente es hacer saltos no más de 300px.
 
 /* 1201px = 75.0625em --> DESKTOP */
 @media (min-width: 75.0625em) {
+    /* Ponemos a tres columnas la sección de Our Services */
     .flex article {
         width: 33.33333333%;
     }
@@ -457,6 +465,7 @@ Normalmente es hacer saltos no más de 300px.
         text-align: initial;
     }
 
+    /* Alineamos mejor el texto del Hero */
     .hero div {
         padding: 7% 3%;
         max-width: 1100px;
@@ -467,14 +476,78 @@ Normalmente es hacer saltos no más de 300px.
 /* ----------------------------------------------------------------------------------------------------------
 ESTILOS BLOG
 ------------------------------------------------------------------------------------------------------------*/
+main .container .flex .post {
+    border-bottom: none;
+}
+
+main .container .flex .post a:hover>div {
+    box-shadow: 5px 5px 8px #aaa;
+}
+
+main .container .flex article div {
+    position: relative;
+}
+
+main .container .flex article div .fecha {
+    position: absolute;
+    top: 0;
+    background-color: rgba(250, 87, 58, .9);
+    opacity: .8;
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: 20px;
+    text-align: center;
+}
+
+main .container .flex article div .fecha p {
+    color: rgba(255, 255, 255);
+    margin-bottom: 10px;
+}
+
+main .container .flex article div .fecha p:last-child {
+    margin-bottom: 0;
+}
+
+main .container .flex article h3 {
+    font-size: 1.5em;
+}
+
+main .container .flex article .autor {
+    color: #FA573A;
+}
+
+main .container .flex article .texto-post {
+    color: rgb(49, 49, 49);
+    margin-top: 15px;
+}
+
+/* MEDIA QUERIES BLOG */
+
+/* 769px = 48.063em --> TABLET PEQUEÑA */
+@media (min-width: 48.063em) {
+    main .container .flex .post {
+        width: 50%;
+        text-align: initial;
+    }
+
+    main .container .flex .post {
+        border-left: none;
+    }
+}
 
 
+/* 1004px = 62.750em --> TABLET MEDIANA */
+@media (min-width: 62.750em) {
+    /* Nada que tocar */
+}
 
-
-
-
-
-
+/* 1201px = 75.0625em --> DESKTOP */
+@media (min-width: 75.0625em) {
+    main .container .flex .post {
+        width: 33.33333333%;
+        text-align: initial;
+    }
+}
 
 /* ----------------------------------------------------------------------------------------------------------
 ESTILOS CARTA
