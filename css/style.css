@@ -107,7 +107,7 @@ header .nav-top .container div:nth-child(3), header .nav-top .container div:last
     text-align: right;
 }
 
-/* Menú de navegación header */
+/* Menú de navegación cabecera */
 
 header nav {
     padding: 20px 3%;
@@ -122,6 +122,13 @@ header .hamburguesa div {
     border-top: 2px solid #aaa;
     width: 1.875em;
     margin-bottom: 0.625em;
+    transition: .5s;
+}
+
+header .hamburguesa:hover div {
+    border-top: 2px solid #FA573A;
+    width: 1.875em;
+    margin-bottom: 0.45em;
 }
 
 header nav .logo {
@@ -150,7 +157,7 @@ header nav .menu li a {
     display: block;
 }
 
-/* Como en los móviles no existe el hover, usamos la clase activa para que se vea en los móviles en qué categoría estás. */
+/* Como en los móviles no existe el hover, usamos la clase activa para que se vea en los móviles en qué categoría estás */
 header nav .menu li a.activo,
 header nav .menu li a:hover {
     color: #FA573A;
@@ -228,7 +235,7 @@ header nav .menu li a:hover {
     color: #FA573A;
 }
 
-/* Inicio del MAIN */
+/* Inicio del Main */
 
 main section.container {
     padding-top: 3.125em;
@@ -264,7 +271,7 @@ main section h2 span {
     font-weight: 700;
 }
 
-/* Inicio Our Services */
+/* Inicio de Our Services */
 
 .flex {
     display: flex;
@@ -316,7 +323,7 @@ main section h2 span {
     transition: 1s;
 }
 
-/* Inicio About Us */
+/* Inicio de About Us */
 
 .flex .columna {
     width: 100%;
@@ -360,6 +367,7 @@ p {
     color: #555;
 }
 
+/* Inicio de Footer */
 footer {
     background-color: #21242E;
     padding: 1.825em 0;
@@ -372,6 +380,11 @@ footer p {
 footer a {
     color: white;
     text-decoration: none;
+}
+
+footer a:hover {
+    color: #FA573A;
+    text-decoration: underline;
 }
 
 /* MEDIA QUERIES */
