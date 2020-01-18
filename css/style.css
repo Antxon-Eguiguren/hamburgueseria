@@ -48,6 +48,9 @@ ESTILOS GENERALES
     -o-box-sizing: border-box;
     /* Internet Explorer */
     -ms-box-sizing: border-box;
+
+    /* Para que el go-to-top vaya más fino */
+    scroll-behavior: smooth;
 }
 
 /* La fuente para el body */
@@ -389,6 +392,11 @@ footer a:hover {
     text-decoration: underline;
 }
 
+footer .container {
+    display: flex;
+    justify-content: space-between;
+}
+
 /* MEDIA QUERIES HOME */
 
 /* Hemos empezado en mobile first, por tanto la versión móvil ya está hecha. Ahora tenemos que establecer los breakpoints para tablet y desktop.
@@ -535,7 +543,6 @@ main .container .flex article .texto-post {
     }
 }
 
-
 /* 1004px = 62.750em --> TABLET MEDIANA */
 @media (min-width: 62.750em) {
     /* Nada que tocar */
@@ -573,38 +580,42 @@ ESTILOS CARTA
     color: #FA573A;
 }
 
-.carta .container .flex div:first-child .active,
-.carta .container .flex div:first-child a  {
+.carta .container .flex-carta {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.carta .container .flex-carta .categorias {
+    width: 100%;
+    padding: 30px 0px;
+}
+
+.carta .container .flex-carta .categorias a {
     text-decoration: none;
 }
 
-.carta .container .flex div:first-child .active p {
-    background-color: #FA573A;
-}
-
-.flex .categorias {
-    flex-direction: column;
-    width: 100%;
-    padding: 10% 0px;
-}
-
-.flex .categorias a p {
+.carta .container .flex-carta .categorias a p {
     padding: 6px;
     border-radius: 5px;
     color: white;
 }
 
-.flex .categorias a:hover {
+.carta .container .flex-carta .categorias .active p {
+    background-color: #FA573A;
+}
+
+.carta .container .flex-carta .categorias a:hover p {
     background-color: #FA573A;
     border-radius: 5px;
 }
 
-.carta .container .flex div:nth-child(2) h3 {
+.carta .container .flex-carta .ofertas h3 {
     font-size: 1.3em;
     font-weight: 700;
 }
 
-.carta .container .flex div:nth-child(2)>p {
+.carta .container .flex-carta .ofertas>p {
     padding: 30px 0px;
 }
 
@@ -619,37 +630,102 @@ ESTILOS CARTA
     border-color: #FA573A;
 }
 
-.carta .container .flex div:nth-child(3) .row {
-    padding: 0;
-    border-bottom: none;
+.carta .container .flex-carta .menu .flex-elemento .texto .flex-elemento-titulo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.elemento-titulo h4 {
-    float: left;
-    width: 80%;
+.carta .container .flex-carta .menu .flex-elemento .texto .flex-elemento-titulo h4 {
     font-size: 1em;
     font-weight: 700;
     padding: 20px 0px;
 }
 
-.carta .container .flex div:last-child .elemento .elemento-titulo p {
-    float: right;
-    width: 20%;
+.carta .container .flex-carta .menu .flex-elemento .texto .flex-elemento-titulo p {
     color: #FA573A;
     font-weight: 700;
     padding: 16px 0px;
     text-align: right;
 }
 
-.carta .container .flex div:last-child .elemento {
-    padding-bottom: 60px;
+.carta .container .flex-carta .menu .flex-elemento .texto .enlace {
+    display: inline-block; 
+    color: #FA573A;
+    margin: 1em 0;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.carta .container .flex-carta .menu .flex-elemento .texto .enlace i {
+    margin-left: 3px;
+}
+
+.carta .container .flex-carta .menu .flex-elemento .texto .enlace:hover i {
+    transform: translateX(5px);
+    transition: 1s;
+}
+
+.carta .container .flex-carta .menu .flex-elemento {
+    padding: 30px 0px;
 }
 
 /* Para que el borde no afecte a la imagen y no haga efecto raro al pasar el ratón */
-.carta .container .flex div:last-child .elemento a img {
+.carta .container .flex-carta .menu .flex-elemento .foto a img {
     margin: 1px;
 }
 
-.carta .container .flex div:last-child .elemento a:hover img {
+.carta .container .flex-carta .menu .flex-elemento .foto a:hover img {
     outline: 1px solid yellow;
+}
+
+/* MEDIA QUERIES CARTA */
+
+/* 769px = 48.063em --> TABLET PEQUEÑA */
+@media (min-width: 48.063em) {
+    .carta .container .flex-carta .menu .flex-elemento {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .carta .container .flex-carta .menu .flex-elemento .foto {
+        width: 40%;
+    }
+
+    .carta .container .flex-carta .menu .flex-elemento .texto {
+        width: 60%;
+        padding: 0px 2%;
+    }
+}
+
+/* 1004px = 62.750em --> TABLET MEDIANA */
+@media (min-width: 62.750em) {
+    .carta .container .flex-carta {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .carta .container .flex-carta .col1 {
+        width: 25%;
+    }
+
+    .carta .container .flex-carta .menu {
+        width: 75%;
+        padding-left: 50px;
+    }
+
+    .carta .container .flex-carta .menu .flex-elemento .texto .flex-elemento-titulo {
+        flex-wrap: nowrap;
+    }
+
+    .carta .container .flex-carta .menu .flex-elemento .texto {
+        padding-left: 20px;
+    }
+}
+
+/* 1201px = 75.0625em --> DESKTOP */
+@media (min-width: 75.0625em) {
+    /* Nada que hacer */
 }
