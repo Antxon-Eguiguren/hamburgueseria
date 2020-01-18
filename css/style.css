@@ -552,3 +552,104 @@ main .container .flex article .texto-post {
 /* ----------------------------------------------------------------------------------------------------------
 ESTILOS CARTA
 ------------------------------------------------------------------------------------------------------------*/
+
+.carta {
+    background-color:#21242E;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 3%;
+    margin-bottom: 100px;
+}
+
+.carta h2, .carta h3, .carta h4 {
+    color: white;
+}
+
+.carta p {
+    color: #aaa;
+}
+
+.carta h2 span {
+    color: #FA573A;
+}
+
+.carta .container .flex div:first-child .active,
+.carta .container .flex div:first-child a  {
+    text-decoration: none;
+}
+
+.carta .container .flex div:first-child .active p {
+    background-color: #FA573A;
+}
+
+.flex .categorias {
+    flex-direction: column;
+    width: 100%;
+    padding: 10% 0px;
+}
+
+.flex .categorias a p {
+    padding: 6px;
+    border-radius: 5px;
+    color: white;
+}
+
+.flex .categorias a:hover {
+    background-color: #FA573A;
+    border-radius: 5px;
+}
+
+.carta .container .flex div:nth-child(2) h3 {
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+.carta .container .flex div:nth-child(2)>p {
+    padding: 30px 0px;
+}
+
+.underline-carta {
+    position: relative;
+    width: 80px;
+}
+
+.underline-carta hr {
+    position: absolute;
+    width: 100%;
+    border-color: #FA573A;
+}
+
+.carta .container .flex div:nth-child(3) .row {
+    padding: 0;
+    border-bottom: none;
+}
+
+.elemento-titulo h4 {
+    float: left;
+    width: 80%;
+    font-size: 1em;
+    font-weight: 700;
+    padding: 20px 0px;
+}
+
+.carta .container .flex div:last-child .elemento .elemento-titulo p {
+    float: right;
+    width: 20%;
+    color: #FA573A;
+    font-weight: 700;
+    padding: 16px 0px;
+    text-align: right;
+}
+
+.carta .container .flex div:last-child .elemento {
+    padding-bottom: 60px;
+}
+
+/* Para que el borde no afecte a la imagen y no haga efecto raro al pasar el ratón */
+.carta .container .flex div:last-child .elemento a img {
+    margin: 1px;
+}
+
+.carta .container .flex div:last-child .elemento a:hover img {
+    outline: 1px solid yellow;
+}
