@@ -1,3 +1,7 @@
+/* ----------------------------------------------------------------------------------------------------------
+IMPORT Y APUNTES
+------------------------------------------------------------------------------------------------------------*/
+
 /* Import del reset de Eric Meyer */
 @import url(reset.css);
 
@@ -15,6 +19,10 @@
 */
 
 /* :root es para crear variables en CSS */
+
+/* ----------------------------------------------------------------------------------------------------------
+ESTILOS GENERALES
+------------------------------------------------------------------------------------------------------------*/
 
 /* Los containers */
 .container {
@@ -40,6 +48,9 @@
     -o-box-sizing: border-box;
     /* Internet Explorer */
     -ms-box-sizing: border-box;
+
+    /* Para que el go-to-top vaya más fino */
+    scroll-behavior: smooth;
 }
 
 /* La fuente para el body */
@@ -62,6 +73,10 @@ img {
     height: auto;
     display: block;
 }
+
+/* ----------------------------------------------------------------------------------------------------------
+ESTILOS HOME
+------------------------------------------------------------------------------------------------------------*/
 
 /* Header superior */
 header .nav-top {
@@ -95,7 +110,7 @@ header .nav-top .container div:nth-child(3), header .nav-top .container div:last
     text-align: right;
 }
 
-/* Menú de navegación */
+/* Menú de navegación cabecera */
 
 header nav {
     padding: 20px 3%;
@@ -110,6 +125,13 @@ header .hamburguesa div {
     border-top: 2px solid #aaa;
     width: 1.875em;
     margin-bottom: 0.625em;
+    transition: .5s;
+}
+
+header .hamburguesa:hover div {
+    border-top: 2px solid #FA573A;
+    width: 1.875em;
+    margin-bottom: 0.45em;
 }
 
 header nav .logo {
@@ -138,7 +160,7 @@ header nav .menu li a {
     display: block;
 }
 
-/* Como en los móviles no existe el hover, usamos la clase activa para que se vea en los móviles en qué categoría estás. */
+/* Como en los móviles no existe el hover, usamos la clase activa para que se vea en los móviles en qué categoría estás */
 header nav .menu li a.activo,
 header nav .menu li a:hover {
     color: #FA573A;
@@ -216,7 +238,7 @@ header nav .menu li a:hover {
     color: #FA573A;
 }
 
-/* Inicio del MAIN */
+/* Inicio del Main */
 
 main section.container {
     padding-top: 3.125em;
@@ -252,7 +274,8 @@ main section h2 span {
     font-weight: 700;
 }
 
-/* Inicio Our Services */
+/* Inicio de Our Services */
+
 .flex {
     display: flex;
     flex-wrap: wrap;
@@ -274,12 +297,13 @@ main section h2 span {
     border: 2px solid #FA573A;
     /* Lo ponemos en rem para que no aumente con los 2em que le hemos puesto al icono */
     padding: .6rem;
+    box-shadow: 5px 5px 8px #aaa;
 }
 
-/* Rotar el camión de lado */
-.fa-truck {
+/* Rotar el camión de lado (lo tengo comentado porque sino la sombra también me rota y queda mal) */
+/* .fa-truck {
     transform: rotateY(180deg);
-}
+} */
 
 .flex article h3 {
     font-weight: 700;
@@ -303,7 +327,8 @@ main section h2 span {
     transition: 1s;
 }
 
-/* Inicio About Us */
+/* Inicio de About Us */
+
 .flex .columna {
     width: 100%;
     padding-top: 6em;
@@ -344,8 +369,10 @@ main section h2 span {
 
 p {
     color: #555;
+    line-height: 1.5em;
 }
 
+/* Inicio de Footer */
 footer {
     background-color: #21242E;
     padding: 1.825em 0;
@@ -360,7 +387,17 @@ footer a {
     text-decoration: none;
 }
 
-/* MEDIA QUERIES */
+footer a:hover {
+    color: #FA573A;
+    text-decoration: underline;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* MEDIA QUERIES HOME */
 
 /* Hemos empezado en mobile first, por tanto la versión móvil ya está hecha. Ahora tenemos que establecer los breakpoints para tablet y desktop.
 Normalmente es hacer saltos no más de 300px.
@@ -368,11 +405,13 @@ Normalmente es hacer saltos no más de 300px.
 
 /* 769px = 48.063em --> TABLET PEQUEÑA */
 @media (min-width: 48.063em) {
+    /* Pasamos de display: none a display: inline */
     header .nav-top a span {
         display: inline;
         font-size: .6em;
     }
 
+    /* Ponemos dos artículos en una fila y el tercero a ancho completo en la siguiente fila */
     .flex article {
         width: 50%;
         padding: 1.825em 3%;
@@ -393,10 +432,12 @@ Normalmente es hacer saltos no más de 300px.
 
 /* 1004px = 62.750em --> TABLET MEDIANA */
 @media (min-width: 62.750em) {
+    /* Quitamos el menú de hamburguesa */
     header .hamburguesa {
         display: none;
     }
 
+    /* Ponemos el menú de navegación en la misma fila que el logo */
     header nav .menu {
         padding-top: 0px;
         float: right;
@@ -413,6 +454,7 @@ Normalmente es hacer saltos no más de 300px.
         padding-right: 0em;
     }
 
+    /* La sección de About Us la ponemos en dos columnas */
     .flex .columna {
         width: 50%;
         padding: 3em 2em;
@@ -421,6 +463,7 @@ Normalmente es hacer saltos no más de 300px.
 
 /* 1201px = 75.0625em --> DESKTOP */
 @media (min-width: 75.0625em) {
+    /* Ponemos a tres columnas la sección de Our Services */
     .flex article {
         width: 33.33333333%;
     }
@@ -430,9 +473,259 @@ Normalmente es hacer saltos no más de 300px.
         text-align: initial;
     }
 
+    /* Alineamos mejor el texto del Hero */
     .hero div {
         padding: 7% 3%;
         max-width: 1100px;
         margin: 0 auto;
     }
+}
+
+/* ----------------------------------------------------------------------------------------------------------
+ESTILOS BLOG
+------------------------------------------------------------------------------------------------------------*/
+main .container .flex .post {
+    border-bottom: none;
+}
+
+main .container .flex .post a:hover>div {
+    box-shadow: 5px 5px 8px #aaa;
+}
+
+main .container .flex article div {
+    position: relative;
+}
+
+main .container .flex article div .fecha {
+    position: absolute;
+    top: 0;
+    background-color: rgba(250, 87, 58, .9);
+    opacity: .8;
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: 20px;
+    text-align: center;
+}
+
+main .container .flex article div .fecha p {
+    color: rgba(255, 255, 255);
+    margin-bottom: 10px;
+}
+
+main .container .flex article div .fecha p:last-child {
+    margin-bottom: 0;
+}
+
+main .container .flex article h3 {
+    font-size: 1.5em;
+}
+
+main .container .flex article .autor {
+    color: #FA573A;
+}
+
+main .container .flex article .texto-post {
+    color: rgb(49, 49, 49);
+    margin-top: 15px;
+}
+
+/* MEDIA QUERIES BLOG */
+
+/* 769px = 48.063em --> TABLET PEQUEÑA */
+@media (min-width: 48.063em) {
+    main .container .flex .post {
+        width: 50%;
+        text-align: initial;
+    }
+
+    main .container .flex .post {
+        border-left: none;
+    }
+}
+
+/* 1004px = 62.750em --> TABLET MEDIANA */
+@media (min-width: 62.750em) {
+    /* Nada que tocar */
+}
+
+/* 1201px = 75.0625em --> DESKTOP */
+@media (min-width: 75.0625em) {
+    main .container .flex .post {
+        width: 33.33333333%;
+        text-align: initial;
+    }
+}
+
+/* ----------------------------------------------------------------------------------------------------------
+ESTILOS CARTA
+------------------------------------------------------------------------------------------------------------*/
+
+.carta {
+    background-color:#21242E;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 3%;
+    margin-bottom: 100px;
+}
+
+.carta h2, .carta h3, .carta h4 {
+    color: white;
+}
+
+.carta p {
+    color: #aaa;
+}
+
+.carta h2 span {
+    color: #FA573A;
+}
+
+.carta .container .flex-carta {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.carta .container .flex-carta .categorias {
+    width: 100%;
+    padding: 30px 0px;
+}
+
+.carta .container .flex-carta .categorias a {
+    text-decoration: none;
+}
+
+.carta .container .flex-carta .categorias a p {
+    padding: 6px;
+    border-radius: 5px;
+    color: white;
+}
+
+.carta .container .flex-carta .categorias .active p {
+    background-color: #FA573A;
+}
+
+.carta .container .flex-carta .categorias a:hover p {
+    background-color: #FA573A;
+    border-radius: 5px;
+}
+
+.carta .container .flex-carta .ofertas h3 {
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+.carta .container .flex-carta .ofertas>p {
+    padding: 30px 0px;
+}
+
+.underline-carta {
+    position: relative;
+    width: 80px;
+}
+
+.underline-carta hr {
+    position: absolute;
+    width: 100%;
+    border-color: #FA573A;
+}
+
+.carta .container .flex-carta .menu .flex-elemento .texto .flex-elemento-titulo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.carta .container .flex-carta .menu .flex-elemento .texto .flex-elemento-titulo h4 {
+    font-size: 1em;
+    font-weight: 700;
+    padding: 20px 0px;
+}
+
+.carta .container .flex-carta .menu .flex-elemento .texto .flex-elemento-titulo p {
+    color: #FA573A;
+    font-weight: 700;
+    padding: 16px 0px;
+    text-align: right;
+}
+
+.carta .container .flex-carta .menu .flex-elemento .texto .enlace {
+    display: inline-block; 
+    color: #FA573A;
+    margin: 1em 0;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.carta .container .flex-carta .menu .flex-elemento .texto .enlace i {
+    margin-left: 3px;
+}
+
+.carta .container .flex-carta .menu .flex-elemento .texto .enlace:hover i {
+    transform: translateX(5px);
+    transition: 1s;
+}
+
+.carta .container .flex-carta .menu .flex-elemento {
+    padding: 30px 0px;
+}
+
+/* Para que el borde no afecte a la imagen y no haga efecto raro al pasar el ratón */
+.carta .container .flex-carta .menu .flex-elemento .foto a img {
+    margin: 1px;
+}
+
+.carta .container .flex-carta .menu .flex-elemento .foto a:hover img {
+    outline: 1px solid yellow;
+}
+
+/* MEDIA QUERIES CARTA */
+
+/* 769px = 48.063em --> TABLET PEQUEÑA */
+@media (min-width: 48.063em) {
+    .carta .container .flex-carta .menu .flex-elemento {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .carta .container .flex-carta .menu .flex-elemento .foto {
+        width: 40%;
+    }
+
+    .carta .container .flex-carta .menu .flex-elemento .texto {
+        width: 60%;
+        padding: 0px 2%;
+    }
+}
+
+/* 1004px = 62.750em --> TABLET MEDIANA */
+@media (min-width: 62.750em) {
+    .carta .container .flex-carta {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .carta .container .flex-carta .col1 {
+        width: 25%;
+    }
+
+    .carta .container .flex-carta .menu {
+        width: 75%;
+        padding-left: 50px;
+    }
+
+    .carta .container .flex-carta .menu .flex-elemento .texto .flex-elemento-titulo {
+        flex-wrap: nowrap;
+    }
+
+    .carta .container .flex-carta .menu .flex-elemento .texto {
+        padding-left: 20px;
+    }
+}
+
+/* 1201px = 75.0625em --> DESKTOP */
+@media (min-width: 75.0625em) {
+    /* Nada que hacer */
 }
