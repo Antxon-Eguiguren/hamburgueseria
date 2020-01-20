@@ -499,8 +499,7 @@ main .container .flex article div {
 main .container .flex article div .fecha {
     position: absolute;
     top: 0;
-    background-color: rgba(250, 87, 58, .9);
-    opacity: .8;
+    background-color: rgba(238, 75, 46, 0.6);
     font-size: 1.2em;
     font-weight: 700;
     padding: 20px;
@@ -508,7 +507,7 @@ main .container .flex article div .fecha {
 }
 
 main .container .flex article div .fecha p {
-    color: rgba(255, 255, 255);
+    color: white;
     margin-bottom: 10px;
 }
 
